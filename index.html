@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="next-head-count" content="2">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <!--Change has maded-->
+  <style>
+    /* Set display to none for image */
+    #image{
+      display: none;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <h1>
+    Waffle Hacks - Build Your Own Waffle!
+  </h1>
+  <div style = "position:relative; left:80px; top:0px;">
+    <p>
+      <font size=6> Choose your base: <span id='base'></span> </font>
+    </p>
+    <button onclick = "update1()" type="button" id = "baseBtn1">Vanilla Dough</button> <font size=5> $3.00 </font> <br> <br>
+    <button onclick = "update2()" type="button" id = "baseBtn2">Croissants</button> <font size=5> $4.00 </font> <br> <br>
+    <button onclick = "update3()" type="button" id = "baseBtn3">Tater Tots</button> <font size=5> $4.00 </font>
+    <p>
+      <font size=6> Choose your filling: <span id='filling'></span> </font>
+    </p>
+    <button onclick = "update4()" type="button" id = "fillingBtn1">Chocolate chips</button> <font size=5> $1.00 </font> <br> <br>
+    <button onclick = "update5()" type="button" id = "fillingBtn2">Pepperoni & Cheese </button> <font size=5> $2.00 </font> <br> <br>
+    <button onclick = "update6()" type="button" id = "fillingBtn3">Ham & Egg</button> <font size=5> $2.00 </font>
+    <p>
+      <font size=6> Choose your topping: <span id='topping'></span></font>
+    </p>
+    <button onclick = "update7()" type="button" id = "toppingBtn1">Berry Medleys</button> <font size=5> $1.00 </font> <br> <br>
+    <button onclick = "update8()" type="button" id = "toppingBtn2">Whipped Cream</button> <font size=5> $0.50 </font> <br> <br>
+    <button onclick = "update9()" type="button" id = "toppingBtn3">Ice Cream</button> <font size=5> $1.00 </font>
+  </div>
+
+  <div style = "position:relative; left:800px; top:-450px;">
+    <p>
+      <button onclick = "makeWaffle()" type="button" id = "totalBtn"> Make Waffle!
+      </button> <br>
+    </p>  
+  </div>
+  
+
+  <div style = "position:relative; left:800px; top:-300px;">
+    <p>
+      <button onclick = "makeAnother()" type="button" id = "totalBtn"> Make Another!</button> <br>
+    </p>  
+  </div>
+  
+  <div style = "position:relative; left:800px; top:-500px;">
+    <p>
+      <font size=5> Total: $<span id='total'></span> </font>
+    </p>
+  </div>
+
+  <div>
+   <img id = "waffleImg" style = "position:relative; left:800px; top:-850px;" src = "waffle.png" length = "300" width = "300">
+  </div>
+  
+  <script src = 'script.js'></script>
+</body>
+
+  
+
+</html>
