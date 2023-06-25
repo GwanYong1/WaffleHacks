@@ -1,178 +1,297 @@
-html {
-  height: 100%;
-  width: 45%;
-}
+const vanillaDoughPrice = 3.00;
+const croissantsPrice = 4.00;
+const taterTotsPrice = 4.00;
 
-h1
+const chocolateChipsPrice = 1.00;
+const pepperoniCheesePrice = 2.00;
+const hamEggPrice = 2.00;
+
+const berryMedleysPrice = 1.00;
+const whippedCreamPrice = 0.50;
+const iceCreamPrice = 1.00;
+
+let total = 0;
+
+document.getElementById('total').innerHTML = total;
+
+
+let waffleList = [];
+for(let i = 0; i < 6; i++)
 {
-  text-align: right
+  waffleList[i] = 0;
 }
 
-body{
-  background-color : #B8E2F2;
+console.log(waffleList);
+
+function update1()
+{
+  waffleList[0] = 'vanillaDough';
+  waffleList[1] = vanillaDoughPrice;
+  console.log(waffleList);
+
+  updateTotal();
+  document.getElementById('base').innerHTML = 'Vanilla Dough';
 }
 
-#baseBtn1{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-/*changes made*/
-#baseBtn1:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function update2()
+{
+  waffleList[0] = 'croissants';
+  waffleList[1] = croissantsPrice;
+  console.log(waffleList);
+
+  updateTotal();
+  document.getElementById('base').innerHTML = 'Croissants';
 }
 
-#baseBtn2{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#baseBtn2:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function update3()
+{
+  waffleList[0] = 'taterTots';
+  waffleList[1] = taterTotsPrice;
+  console.log(waffleList);
+
+  updateTotal();
+  document.getElementById('base').innerHTML = 'Tater Tots';
 }
 
-#baseBtn3{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#baseBtn3:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function update4()
+{
+  waffleList[2] = 'chocolateChips';
+  waffleList[3] = chocolateChipsPrice;
+  console.log(waffleList);
+
+  updateTotal();
+  document.getElementById('filling').innerHTML = 'Chocolate Chips';
 }
 
+function update5()
+{
+  waffleList[2] = 'pepperoniCheese';
+  waffleList[3] = pepperoniCheesePrice;
+  console.log(waffleList);
 
-#fillingBtn1{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#fillingBtn1:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  updateTotal();
+  document.getElementById('filling').innerHTML = 'Pepperoni & Cheese';
 }
 
+function update6()
+{
+  waffleList[2] = 'hamEgg';
+  waffleList[3] = hamEggPrice;
+  console.log(waffleList);
 
-#fillingBtn2{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#fillingBtn2:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  updateTotal();
+  document.getElementById('filling').innerHTML = 'Ham & Egg';
 }
 
+function update7()
+{
+  waffleList[4] = 'berryMedleys';
+  waffleList[5] = berryMedleysPrice;
+  console.log(waffleList);
 
-#fillingBtn3{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#fillingBtn3:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  updateTotal();
+  document.getElementById('topping').innerHTML = 'Berry Medleys';
 }
 
-
-#toppingBtn1{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#toppingBtn1:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function update8()
+{
+  waffleList[4] = 'whippedCream';
+  waffleList[5] = whippedCreamPrice;
+  console.log(waffleList);
+  
+  updateTotal();
+  document.getElementById('topping').innerHTML = 'Whipped Cream';
 }
 
-#toppingBtn2{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#toppingBtn2:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function update9()
+{
+  waffleList[4] = 'iceCream';
+  waffleList[5] = iceCreamPrice;
+  console.log(waffleList);
+
+  updateTotal();
+  document.getElementById('topping').innerHTML = 'Ice Cream';
 }
 
-#toppingBtn3{
-  border-radius: 12px;
-  background-color: #f0d29e;
-  border: 2px solid #977749;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-#toppingBtn3:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+function updateTotal()
+{
+  total = 0;
+  for(let i = 1; i < waffleList.length; i = i + 2)
+  {
+    total = total + waffleList[i];
+  }
+  total = (Math.round(total * 100)/100).toFixed(2);
+  document.getElementById('total').innerHTML = total;
+  console.log(total);
 }
 
-#totalBtn{
-  border-radius: 12px;
-  background-color: #62d331;
-  border: 2px solid #045828;;
-  color: black;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
+function makeAnother()
+{
+  for(let i = 0; i < 6; i++)
+  {
+  waffleList[i] = 0;
+  }
+
+  total = 0;
+  document.getElementById('total').innerHTML = total;
+  console.log(total);
+  console.log(waffleList);
+  document.getElementById('base').innerHTML = ''
+  document.getElementById('filling').innerHTML = '';
+  document.getElementById('topping').innerHTML = '';
+
+  hideElements();
 }
-#totalBtn:active{
-  transform: sclae(0.98);
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+function hideElements()
+{
+  document.getElementById('makeAnotherBtn').style.visibility = 'hidden'
+  document.getElementById('waffleImg1').style.visibility = 'hidden';
+  document.getElementById('waffleImg2').style.visibility = 'hidden';
+  document.getElementById('waffleImg3').style.visibility = 'hidden';
+  document.getElementById('waffleImg4').style.visibility = 'hidden';
+  document.getElementById('waffleImg5').style.visibility = 'hidden';
+  document.getElementById('waffleImg6').style.visibility = 'hidden';
+  document.getElementById('waffleImg7').style.visibility = 'hidden';
+  document.getElementById('waffleImg8').style.visibility = 'hidden';
+  document.getElementById('waffleImg9').style.visibility = 'hidden';
+  document.getElementById('waffleImg10').style.visibility = 'hidden';
+  document.getElementById('waffleImg11').style.visibility = 'hidden';
+  document.getElementById('waffleImg12').style.visibility = 'hidden';
+  document.getElementById('waffleImg13').style.visibility = 'hidden';
+  document.getElementById('waffleImg14').style.visibility = 'hidden';
+  document.getElementById('waffleImg15').style.visibility = 'hidden';
+  document.getElementById('waffleImg16').style.visibility = 'hidden';
+  document.getElementById('waffleImg17').style.visibility = 'hidden';
+  document.getElementById('waffleImg18').style.visibility = 'hidden';
+  document.getElementById('waffleImg19').style.visibility = 'hidden';
+  document.getElementById('waffleImg20').style.visibility = 'hidden';
+  document.getElementById('waffleImg21').style.visibility = 'hidden';
+  document.getElementById('waffleImg22').style.visibility = 'hidden';
+  document.getElementById('waffleImg23').style.visibility = 'hidden';
+  document.getElementById('waffleImg24').style.visibility = 'hidden';
+  document.getElementById('waffleImg25').style.visibility = 'hidden';
+  document.getElementById('waffleImg26').style.visibility = 'hidden';
+  document.getElementById('waffleImg27').style.visibility = 'hidden';
+}
+  
+hideElements();
+
+function makeWaffle()
+{
+  let base = waffleList[0];
+  let filling = waffleList[2];
+  let topping = waffleList[4];
+
+  document.getElementById('makeAnotherBtn').style.visibility = 'visible'
+  
+  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'berryMedleys')
+  {
+    console.log("test");
+    document.getElementById('waffleImg1').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg2').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg3').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg4').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg5').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg6').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg7').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg8').style.visibility = 'visible';
+  }
+  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg9').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg10').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg11').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg12').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg13').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg14').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg15').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'hamEgg' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg16').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'hamEgg' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg17').style.visibility = 'visible';
+  }
+  if(base == 'croissants' && filling == 'hamEgg' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg18').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg19').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg20').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg21').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg22').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg23').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg24').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'berryMedleys')
+  {
+    document.getElementById('waffleImg25').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'whippedCream')
+  {
+    document.getElementById('waffleImg26').style.visibility = 'visible';
+  }
+  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'iceCream')
+  {
+    document.getElementById('waffleImg27').style.visibility = 'visible';
+  }
 }
