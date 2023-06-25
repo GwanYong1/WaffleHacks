@@ -1,264 +1,194 @@
-const vanillaDoughPrice = 3.00;
-const croissantsPrice = 4.00;
-const taterTotsPrice = 4.00;
-
-const chocolateChipsPrice = 1.00;
-const pepperoniCheesePrice = 2.00;
-const hamEggPrice = 2.00;
-
-const berryMedleysPrice = 1.00;
-const whippedCreamPrice = 0.50;
-const iceCreamPrice = 1.00;
-
-let total = 0;
-//let total = parseFloat('0.00').toFixed(2);
-//total = (Math.round(total * 100) / 100).toFixed(2);
-
-
-let waffleList = [];
-for(let i = 0; i < 6; i++)
-{
-  waffleList[i] = 0;
+html {
+  height: 100%;
+  width: 45%;
 }
 
-console.log(waffleList);
-
-function update1()
+h1
 {
-  waffleList[0] = 'vanillaDough';
-  waffleList[1] = vanillaDoughPrice;
-  console.log(waffleList);
-
-  updateTotal();
-  document.getElementById('base').innerHTML = 'Vanilla Dough';
+  text-align: right
 }
 
-function update2()
-{
-  waffleList[0] = 'croissants';
-  waffleList[1] = croissantsPrice;
-  console.log(waffleList);
-
-  updateTotal();
-  document.getElementById('base').innerHTML = 'Croissants';
+body{
+  background-color : #B8E2F2;
 }
 
-function update3()
-{
-  waffleList[0] = 'taterTots';
-  waffleList[1] = taterTotsPrice;
-  console.log(waffleList);
-
-  updateTotal();
-  document.getElementById('base').innerHTML = 'Tater Tots';
+#baseBtn1{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+/*changes made*/
+#baseBtn1:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update4()
-{
-  waffleList[2] = 'chocolateChips';
-  waffleList[3] = chocolateChipsPrice;
-  console.log(waffleList);
-
-  updateTotal();
-  document.getElementById('filling').innerHTML = 'Chocolate Chips';
+#baseBtn2{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#baseBtn2:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update5()
-{
-  waffleList[2] = 'pepperoniCheese';
-  waffleList[3] = pepperoniCheesePrice;
-  console.log(waffleList);
-
-  updateTotal();
-  document.getElementById('filling').innerHTML = 'Pepperoni & Cheese';
+#baseBtn3{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#baseBtn3:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update6()
-{
-  waffleList[2] = 'hamEgg';
-  waffleList[3] = hamEggPrice;
-  console.log(waffleList);
 
-  updateTotal();
-  document.getElementById('filling').innerHTML = 'Ham & Egg';
+#fillingBtn1{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#fillingBtn1:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update7()
-{
-  waffleList[4] = 'berryMedleys';
-  waffleList[5] = berryMedleysPrice;
-  console.log(waffleList);
 
-  updateTotal();
-  document.getElementById('topping').innerHTML = 'Berry Medleys';
+#fillingBtn2{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#fillingBtn2:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update8()
-{
-  waffleList[4] = 'whippedCream';
-  waffleList[5] = whippedCreamPrice;
-  console.log(waffleList);
-  
-  updateTotal();
-  document.getElementById('topping').innerHTML = 'Whipped Cream';
+
+#fillingBtn3{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#fillingBtn3:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function update9()
-{
-  waffleList[4] = 'iceCream';
-  waffleList[5] = iceCreamPrice;
-  console.log(waffleList);
 
-  updateTotal();
-  document.getElementById('topping').innerHTML = 'Ice Cream';
+#toppingBtn1{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#toppingBtn1:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function updateTotal()
-{
-  total = 0;
-  for(let i = 1; i < waffleList.length; i = i + 2)
-  {
-    total = total + waffleList[i];
-  }
-  total = (Math.round(total * 100) / 100).toFixed(2);
-  document.getElementById('total').innerHTML = total;
-  console.log(total);
+#toppingBtn2{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#toppingBtn2:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-function makeAnother()
-{
-  for(let i = 0; i < 6; i++)
-  {
-  waffleList[i] = 0;
-  }
-
-  total = 0;
-  document.getElementById('total').innerHTML = total;
-  console.log(total);
-  console.log(waffleList);
-  document.getElementById('base').innerHTML = ''
-  document.getElementById('filling').innerHTML = '';
-  document.getElementById('topping').innerHTML = '';
-
-  document.getElementById('waffleImg').style.visibility = 'hidden';
+#toppingBtn3{
+  border-radius: 12px;
+  background-color: #f0d29e;
+  border: 2px solid #977749;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#toppingBtn3:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-document.getElementById('waffleImg').style.visibility = 'hidden';
-
-function makeWaffle()
-{
-  let base = waffleList[0];
-  let filling = waffleList[2];
-  let topping = waffleList[4];
-  
-  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'berryMedleys')
-  {
-    console.log("test");
-    document.getElementById('waffleImg').style.visibility = 'visible';
-  }
-  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'chocolateChips' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'pepperoniCheese' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'vanillaDough' && filling == 'hamEgg' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'chocolateChips' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'pepperoniCheese' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'hamEgg' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'hamEgg' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'croissants' && filling == 'hamEgg' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'chocolateChips' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'pepperoniCheese' && topping == 'iceCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'berryMedleys')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'whippedCream')
-  {
-    
-  }
-  if(base == 'taterTots' && filling == 'hamEgg' && topping == 'iceCream')
-  {
-    
-  }
+#totalBtn{
+  border-radius: 12px;
+  background-color: #62d331;
+  border: 2px solid #045828;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }
-document.getElementById('total').innerHTML = total;
+#totalBtn:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+#makeAnotherBtn{
+  border-radius: 12px;
+  background-color: #62d331;
+  border: 2px solid #045828;;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+#makeAnotherBtn:active{
+  transform: sclae(0.98);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
